@@ -103,9 +103,8 @@ const startStep = {
                 </div>
                 <div class="col-lg-6 col-md-6 col-lg-6">
                     <h2 class="title">ПроФинКвот</h2>
-                    <button class="btn btn-primary w-50 py-3 first-button" data-action="startQuiz">Начать</button>
                     <h3>Как выбрать лучшие акции и монеты для инвестирования, проводя всего 30 минут в день на анализ рынка?</h3>
-                    <h6 style="margin-bottom: 20px">Заполните наш опрос и получите БЕСПЛАТНО подборку из Топ эффективных стратегий для успешной торговли и увеличения вашего дохода.</h6>
+                    <button class="btn btn-primary w-100 py-3 first-button" data-action="startQuiz">Начать</button>
                 </div>
             </div>
         </div>
@@ -143,10 +142,16 @@ const questionsStep = {
                         )
                         .join('')}
                 </div>
+                <div class="row justify-content-center mt-4" style="margin: 0 auto;">
+                    <div class="progress col-md-6" style="padding-left: 0 !important; padding-right: 0 !important;">
+                        <div class="progress-bar" style="width: ${questionsStep.getProgress()}%">${questionsStep.getProgress()}%</div>
+                    </div>
+                </div>
             </div>
         </div>
       `;
     },
+    getProgress: () => (questionsStep.questionIndex / QUESTIONS.length) * 100,
     onClick: (el) => {
         switch (el.getAttribute('data-action')) {
             case 'goToNextQuestion':
@@ -212,6 +217,9 @@ const finalStep = {
                 
                         <button data-action="submitAnswers" class="btn btn-primary w-50 py-3">Отправить</button>
                     </form>
+                </div>
+                <div class="col-lg-6 col-md-6 col-lg-6">
+                    <img class="quiz-img" src="img/quiz-1.jpg">
                 </div>
             </div>
         </div>

@@ -625,8 +625,8 @@ header h2 {
     margin: 0 auto;
 }
 
-.quiz-content .button {
-    width: 200px;
+.quiz-content .btn {
+    font-size: 24px;
 }
 
 @media (max-width: 540px) {
@@ -653,7 +653,6 @@ header h2 {
 }
 
 .quiz-content .answers .answer {
-    margin: 0px 20px;
     padding: 20px;
     background: none;
     font-family: 'Montserrat', sans-serif;
